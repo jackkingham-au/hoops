@@ -10,7 +10,7 @@ type GameOptions = {
 const useGameOptions = create<GameOptions>((set) => ({
     muted: false,
     setMuted: () => set(prev => ({ muted: !prev.muted })),
-    vibrate: false,
+    vibrate: true,
     setVibrate: () => set(prev => ({ vibrate: !prev.vibrate })),
 }))
 
