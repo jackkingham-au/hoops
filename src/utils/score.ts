@@ -18,4 +18,3 @@ export const checkLeaderboardScore = (roundScore: number) => {
 
     if (roundScore === highScore) saveScoreToLeaderboard(roundScore);
 }
-

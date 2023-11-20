@@ -22,7 +22,7 @@ const Home = () => {
 
     return (
         <>
-            <div id="menu" className="h-screen w-screen bg-orange-700 flex items-center justify-center flex-col">
+            <div id="menu" className="min-h-screen w-screen bg-orange-700 flex items-center justify-center flex-col">
                 <div className="rounded-xl bg-black/50 p-4 flex items-center justify-center flex-col">
                     <img src="/icons/basketball.svg" className="scale-[2.7] -mb-8 relative right-2" height={80} width={80} />
 

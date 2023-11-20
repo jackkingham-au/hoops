@@ -45,3 +45,12 @@ export const saveScoreToLeaderboard = (score: number) => {
         }
     })
 }
+
+export const filterLeaderboard = (results: { score: number, team: string }[]) => {
+    const yourTeam = getTeamName();
+
+    return results
+        .filter(({ team }) => team !== yourTeam)
+        .filter(({score}) => score)
+        .sort((a, b) => b.score - a.score)
+}

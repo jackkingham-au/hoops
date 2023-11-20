@@ -14,8 +14,8 @@ const BackButton = () => {
 
     return (
         <>
-            <button onClick={() => goBack()} className="fixed bottom-8 p-2 rounded-lg left-4 btn z-40">
-                <ArrowLeft size={48} className="fill-grey-700 hover:scale-125 block transition" />
+            <button onClick={() => goBack()} className="fixed bottom-4 p-2 rounded-lg left-4 btn z-40">
+                <ArrowLeft size={32} className="fill-grey-700 hover:scale-125 block transition" />
             </button>
         </>
     );

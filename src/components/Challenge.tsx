@@ -12,7 +12,7 @@ const Challenge = () => {
     const { copyText, copied } = useCopy();
 
     const copy = () => {
-        copyText(window.location.href);
+        copyText('https://hoops.jackkingham.com');
         playSound();    
     } 
 
@@ -32,19 +32,19 @@ const Challenge = () => {
                 <h2 className="text-3xl text-center mb-4 text-white text-shadow">Challenge a Friend</h2>
                 <p className="text-lg my-8 text-center text-white text-shadow">Click the link below to copy it, and send it to your friends!</p>
 
-                <div className="relative mx-auto w-[80%] cursor-pointer" onClick={copy}>
-                    <span
-                        children={window.location.href}
-                        className="bg-orange-200 block px-2 py-4 rounded-md box-shadow text-orange-700 w-full cursor-pointer"
+                <div className="flex items-center justify-center mx-auto w-[80%] cursor-pointer" onClick={copy}>
+                    <p
+                        children={'hoops.jackkingham.com'}
+                        className="break-words bg-orange-200 block px-2 py-4 rounded-md box-shadow text-orange-700 w-full cursor-pointer"
                         onClick={copy}
                     />
-                    <div className="absolute top-1/2 -translate-y-1/2 right-6 z-50">
+                    <button className="btn relative top-[2px] ml-2">
                         {
                             (copied)
                             ? <Clipboard2CheckFill size={24} className="fill-green-700" />
                             : <Clipboard2Fill size={24} className="fill-orange-700" />
                         }
-                    </div>
+                    </button>
                 </div>
             </Modal>
         </>
