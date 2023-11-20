@@ -28,7 +28,7 @@ const Emoji = () => {
     }, [count])
 
     return (
-        <animated.div style={springs} className="fixed top-8 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
+        <animated.div style={springs} className="fixed top-8 left-8 z-50 pointer-events-none">
             <h2 className="text-4xl">{emoji}</h2>
         </animated.div>
     )

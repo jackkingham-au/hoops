@@ -25,7 +25,7 @@ const Game = () => {
                 }}
             >
                 <Suspense fallback={null}>
-                    <Physics debug>
+                    <Physics>
                         <Root />
                     </Physics>
                 </Suspense>

@@ -14,13 +14,13 @@ const Font3D = ({ children, meshProps }: { children: React.ReactNode, meshProps:
         curveSegments: 12,
         bevelSize: 8,
         bevelSegments: 5
-    }
+    }   
 
     return (
         <mesh receiveShadow castShadow {...meshProps}>
             {/* @ts-ignore */}
             <textGeometry args={[children?.toString(), options]} />
-            <meshToonMaterial color="cyan" />
+            <meshToonMaterial color="#fb8500" />
         </mesh>
     )
 }
