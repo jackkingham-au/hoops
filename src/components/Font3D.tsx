@@ -1,4 +1,4 @@
-import { MeshProps, extend } from "@react-three/fiber";
+import { extend } from "@react-three/fiber";
 import { FontLoader, TextGeometry } from "three/examples/jsm/Addons.js";
 import BungeeFont from "../assets/fonts/Bungee_Regular.json";
 

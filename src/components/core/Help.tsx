@@ -1,6 +1,6 @@
 import { animated, useSpring } from "@react-spring/web";
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, CircleFill, HandIndexFill, Question, XLg } from "react-bootstrap-icons";
+import { CircleFill, HandIndexFill, Question, XLg } from "react-bootstrap-icons";
 import useSound from "../../hooks/useSound";
 
 const Help = () => {
@@ -35,7 +35,7 @@ const Help = () => {
                     <p className="text-white">Tap the left side of the screen to bounce the ball <span className="text-orange-200">LEFT</span>.</p>
                 </div>
 
-                <div className="flex my-4 items-center mx-8 justify-center flex-col max-w-[200px] mx-auto">
+                <div className="flex my-4 items-center justify-center flex-col max-w-[200px] mx-auto">
                     <div className="relative top-3 flex items-center justify-center flex-col mb-8">
                         <CircleFill size={32} className=" fill-red-400 animate-bounce" />
                         <div className="border-b-4 border-white w-10 rounded-full"></div>
