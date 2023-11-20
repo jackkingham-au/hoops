@@ -44,11 +44,11 @@ const Options = () => {
                             : <VolumeMuteFill size={24} className="fill-red-700 mb-2" />
                     }
                     Volume
-                </button>
+                </button>   
 
                 <button onClick={() => toggle('vibrate')} className="btn p-2 mx-2 rounded-lg flex items-center justify-center flex-col">
                     {
-                        (!vibrate)
+                        (vibrate)
                             ? <PhoneVibrateFill size={24} className="fill-green-700 mb-2" />
                             : <SlashCircle size={24} className="fill-red-700 mb-2" />
                     }
