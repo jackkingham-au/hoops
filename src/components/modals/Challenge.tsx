@@ -1,14 +1,15 @@
 import { Clipboard2CheckFill, Clipboard2Fill, PeopleFill } from "react-bootstrap-icons";
-import useModal from "../hooks/useModal";
-import Modal from "./core/Modal";
-import useSound from "../hooks/useSound";
-import useCopy from "../hooks/useCopy";
+import useModal from "../../hooks/useModal";
+import Modal from "../core/Modal";
+import useSound from "../../hooks/useSound";
+import useCopy from "../../hooks/useCopy";
 
 const Challenge = () => {
 
     const { setOpen } = useModal()
     const { playSound } = useSound('button');
-    
+    const MODAL_TYPE = "CHALLENGE";
+
     const { copyText, copied } = useCopy();
 
     const copy = () => {
@@ -17,7 +18,7 @@ const Challenge = () => {
     } 
 
     const shareChallenge = () => {
-        setOpen(true);
+        setOpen(true, MODAL_TYPE);
         playSound();
     }
 
@@ -28,7 +29,7 @@ const Challenge = () => {
                 Challenge a Friend
             </button>
 
-            <Modal>
+            <Modal type={MODAL_TYPE}>
                 <h2 className="text-3xl text-center mb-4 text-white text-shadow">Challenge a Friend</h2>
                 <p className="text-lg my-8 text-center text-white text-shadow">Click the link below to copy it, and send it to your friends!</p>
 

@@ -5,6 +5,7 @@ import Hoop from "./world/Hoop";
 import ScoreBoard from "./ScoreBoard";
 import WorldBoundary from "./world/WorldBoundary";
 import IslandChain from "./world/IslandChain";
+import Sky from "./world/Sky";
 
 const Root = () => {
 
@@ -20,6 +21,7 @@ const Root = () => {
             <Hoop />
             <Floor />
 
+            <Sky />
             <IslandChain />
             <WorldBoundary />
 

@@ -7,7 +7,7 @@ const useResetGame = () => {
     const { reset: goalReset } = useGoalTracker();
     const { reset: spawnerReset } = useSpawner();
     const { reset: modalReset } = useModal();
-    const { reset: emojiReset } = useEmojiPrompt()
+    const { reset: emojiReset } = useEmojiPrompt();
 
     const reset = () => {
         goalReset();

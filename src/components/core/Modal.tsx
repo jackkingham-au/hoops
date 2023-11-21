@@ -2,18 +2,19 @@ import { animated, useSpring } from "@react-spring/web";
 import useModal from "../../hooks/useModal";
 import { XLg } from "react-bootstrap-icons";
 
-const Modal = ({ children, onClose }: { children: React.ReactNode, onClose?: ([...args]?: any[]) => void }) => {
+const Modal = ({ children, onClose, type = 'DEFAULT' }: { type?: string, children: React.ReactNode, onClose?: ([...args]?: any[]) => void }) => {
 
-    const { open, setOpen } = useModal();
+    const { open, setOpen, type: activeType } = useModal();
+    const openThis = open && activeType === type;
 
     const slideIn = useSpring({
-        y: open ? 0 : 4000
+        y: openThis ? 0 : 4000
     })
 
     const close = () => {
         if (typeof onClose !== 'undefined') onClose(); 
 
-        setOpen(false)
+        setOpen(false, type)
     }
 
     const overlayClose = (e: React.MouseEvent) => {
