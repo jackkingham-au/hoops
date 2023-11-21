@@ -13,12 +13,10 @@ const Hoop = () => {
     const vibrateDevice = useVibrate();
 
     const goal = () => {
-        setTimeout(() => {
-            triggerRespawn();
-            addGoal();
-            playSound();
-            vibrateDevice();
-        }, 500);
+        triggerRespawn();
+        addGoal();
+        playSound();
+        vibrateDevice();
     }
 
     return (
@@ -29,7 +27,7 @@ const Hoop = () => {
                     <meshToonMaterial color="#545454" />
                 </mesh>
             </RigidBody>
-            
+
             <RigidBody type="fixed" restitution={2}>
                 <mesh position={[3, 1, 0]} rotation-y={Math.PI / 2}>
                     <boxGeometry args={[7, 5, 0.5]} />

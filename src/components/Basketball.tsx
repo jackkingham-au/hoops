@@ -20,6 +20,7 @@ const Basketball = () => {
         <>
             {
                 spawn && <RigidBody
+                    name="BASKETBALL"
                     type="dynamic"
                     colliders="ball"
                     position={BALL_SPAWN_POSITION as unknown as any}
