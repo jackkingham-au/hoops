@@ -4,7 +4,6 @@ import { getTeamName } from "./team";
 const api = axios.create({
     baseURL: import.meta.env.VITE_LEADERBOARD_API_BASE,
     headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_LEADERBOARD_API_AUTH}`,
         'Accept': 'application/json',
         'Content-Type': 'application/json'
     }
