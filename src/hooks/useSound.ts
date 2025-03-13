@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import useGameOptions from "./useGameOptions";
 
 const SOUNDS = {
@@ -9,13 +10,17 @@ const SOUNDS = {
 
 const useSound = (type: keyof typeof SOUNDS) => {
     const url = SOUNDS[type]
-    const audio = new Audio(url);
+    const audio = useRef(new Audio(url));
     const { muted } = useGameOptions();
+
+    useEffect(() => {
+        audio.current.muted = muted;
+    }, [muted]);
 
     const playSound = () => {
         if (muted) return; 
 
-        audio.play();
+        audio.current.play();
     }
 
     return { playSound }
