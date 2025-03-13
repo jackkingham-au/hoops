@@ -1,49 +1,52 @@
 import axios from "axios";
-import { setupCache } from "axios-cache-interceptor";
 import { getTeamName } from "./team";
 
-const instance = axios.create({
+const api = axios.create({
     baseURL: import.meta.env.VITE_LEADERBOARD_API_BASE,
+    headers: {
+        Authorization: `Bearer ${import.meta.env.VITE_LEADERBOARD_API_AUTH}`,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
 })
 
-const api = setupCache(instance, {
-
-});
-
+/** Get all leaderboard entries.
+ * 
+ * [Docs Reference](https://docs.sheetdb.io/sheetdb-api/read)
+ */
 export const getLeaderboard = () => {
-    return api.get('', {
-        cache: {
-            cacheTakeover: false
-        }
-    });
+    return api.get('/');
 }
 
+/** Create new team entry.
+ * 
+ * [Docs Reference](https://docs.sheetdb.io/sheetdb-api/create)
+ */
 export const addTeamToLeaderboard = (team: string) => {
     const id = Date.now();
     const score = 0;
 
-    api.post('', {
+    const data = {
         id,
         team,
         score,
-    }, {
-        cache: {
-            cacheTakeover: false
-        }
-    })
+    }
+
+    api.post('/', { data })
 }
 
+/** Update existing team entry.
+ * 
+ * [Docs Reference](https://docs.sheetdb.io/sheetdb-api/update#update-with-single-query)
+ */ 
 export const saveScoreToLeaderboard = (score: number) => {
     const team = getTeamName();
-
-    api.patch(`/team/*${team}*`, {
+    const data = {
         team,
         score,
-    }, {
-        cache: {
-            cacheTakeover: false
-        }
-    })
+    }
+
+    api.patch(`/team/${team}`, { data })
 }
 
 export const filterLeaderboard = (results: { score: number, team: string }[]) => {
@@ -51,6 +54,6 @@ export const filterLeaderboard = (results: { score: number, team: string }[]) =>
 
     return results
         .filter(({ team }) => team !== yourTeam)
-        .filter(({score}) => score)
+        .filter(({ score }) => score)
         .sort((a, b) => b.score - a.score)
 }
