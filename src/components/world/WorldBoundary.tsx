@@ -1,4 +1,4 @@
-import { CollisionPayload, CuboidCollider, RigidBody } from "@react-three/rapier";
+import { CuboidCollider, RigidBody } from "@react-three/rapier";
 import useSpawner from "../../hooks/useSpawner";
 
 const WorldBoundary = () => {
@@ -9,9 +9,6 @@ const WorldBoundary = () => {
         <RigidBody position={[0, 10, 0]} type="fixed">
             <CuboidCollider
                 sensor
-                onIntersectionExit={(_payload) => {
-                        setGameOver()
-                }}
                 args={[20, 20, 15]}
             />
         </RigidBody>

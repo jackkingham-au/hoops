@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import useBallSpawner from "../hooks/useBallSpawner";
 import useBasketball from "../hooks/useBasketball";
 import useControls from "../hooks/useControls";
+import useWorldBoundsCheck from "../hooks/useWorldBoundsCheck";
 
 const Basketball = () => {
     const ballCollider = useRef<RapierRigidBody>(null);
@@ -15,6 +16,7 @@ const Basketball = () => {
     const { spawn } = useBallSpawner(mesh, BALL_SPAWN_POSITION);
 
     useControls(ballCollider);
+    useWorldBoundsCheck(ballCollider);
 
     return (
         <>
